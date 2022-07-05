@@ -6,6 +6,7 @@ from datetime import datetime
 
 url = "https://api.companieshouse.gov.uk/company/{}"
 
+# getting list of company numbers
 queryList = []
 end = False
 while not end:
@@ -15,7 +16,8 @@ while not end:
         queryList.append(userInput)
     else:
         end = True
-# print(queryList)
+
+# sending requests for each company 
 results = []
 lastTime = datetime.now()
 for value in queryList:
@@ -25,21 +27,17 @@ for value in queryList:
     print(result.json()["company_name"])
     results.append(result.json())
 
+    # ratelimiting
     timeSinceRequest = (currentTime-lastTime).total_seconds()
-    # print(timeSinceRequest)
     timeToWait = max(0.5 - timeSinceRequest, 0)
-    # print(timeToWait)
     time.sleep(timeToWait)
     lastTime = datetime.now()
 
-# print(results)
-# print(f"{result.json()['total_results'] = }")
-
+# formatting output
 output = pd.json_normalize(results)
-# print(output)
 outputcsv = output[["company_name", "company_number", "sic_codes", "company_status", "date_of_creation", "company_status", "registered_office_address.address_line_1", "registered_office_address.address_line_2", "registered_office_address.region", "registered_office_address.locality", "registered_office_address.postal_code"]]
-# print(outputcsv)
 
+# save to companysearch.csv
 saved = False
 while not saved:
     try:

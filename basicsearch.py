@@ -12,13 +12,8 @@ query = query.replace("&","%26")
 
 result = requests.get(url.format(query), auth=(str(key),''))
 
-# print(result.json())
-# print(f"{result.json()['total_results'] = }")
-
 output = pd.json_normalize(result.json(), "items")
-# print(output)
 outputcsv = output[["title", "company_number", "company_status", "description", "address_snippet", "company_type", "address.postal_code"]]
-# print(outputcsv)
 
 saved = False
 while not saved:
