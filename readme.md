@@ -18,7 +18,7 @@ To search for the SIC codes, run the companysearch.py file. In the console, ente
 You can input unlimited company codes, but there a 0.5 second delay between each request to eliminate ratelimiting, as the way companies house api does ratelimiting is 600 requests per 5 minutes, which works out to 0.5 seconds per request to not have a few minutes of delay until it resets.<br>
 
 The output is saved to companysearch.csv, with sic_codes in a list for each company.<br>
-
+<br>
 
 For googleapi.py, the api key goes into “.google_api” alone. You get the key from https://console.cloud.google.com/apis/credentials<br>
 
