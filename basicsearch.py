@@ -5,7 +5,7 @@ import pandas as pd
 
 url = "https://api.companieshouse.gov.uk/search/companies?items_per_page=100&q={}"
 
-query = "SL6 2PJ"
+query = "tesco"
 
 query = query.replace(" ","+")
 query = query.replace("&","%26")
