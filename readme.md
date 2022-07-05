@@ -24,4 +24,5 @@ For googleapi.py, the api key goes into “.google_api” alone. You get the key
 
 Like all the other programs, I save to excel as its easier to read, of course you can keep it in python for data manipulation as json. To have clean json, most of the time it will be “result.json()” but if it isn’t it will be whatever the first argument for “pd.json_normalize” is. <br>
 
-In the excel for google API, I also added a column for resultScore, which from what I can understand is how confident the API is that it is related to the query. 
+In the excel for google API, I also added a column for resultScore, which from what I can understand is how confident the API is that it is related to the query. <br>
+and yes i didnt want to make another repositery so google is going here as well
