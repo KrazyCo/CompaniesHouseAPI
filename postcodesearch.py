@@ -3,8 +3,10 @@ from private import key
 import requests
 import pandas as pd
 
+# postcode goes here
 query = "SL6 2PJ"
 
+# api url
 url = "https://api.companieshouse.gov.uk/search/companies?items_per_page=20&q={}"
 
 # replacing space and &, and saving a clean copy to querypostcode for later
@@ -26,10 +28,19 @@ for i in range(0, len(output)):
 for i in range(len(toRemove)):
     output.pop(toRemove[i]-i)
 
+# find all items that are dissolved
+toRemove = []
+for i in range(0, len(output)):
+    if output[i]["company_status"].upper() == "DISSOLVED":
+        toRemove.append(i)
+
+# remove all items that are dissolved
+for i in range(len(toRemove)):
+    output.pop(toRemove[i]-i)
+
 # making the output normalised thing
 output = pd.json_normalize(output)
 outputcsv = output[["title", "company_number", "company_status", "description", "address_snippet", "company_type", "address.postal_code"]]
-print(outputcsv)
 
 # save to csv with checking to see if its writable (excel locks it)
 saved = False
