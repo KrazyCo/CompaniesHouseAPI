@@ -6,7 +6,7 @@ import pandas as pd
 # postcode goes here
 query = "SL6 2PJ"
 
-# api url
+# api url - choose items per page here
 url = "https://api.companieshouse.gov.uk/search/companies?items_per_page=20&q={}"
 
 # replacing space and &, and saving a clean copy to querypostcode for later
