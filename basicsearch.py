@@ -5,7 +5,7 @@ import pandas as pd
 
 url = "https://api.companieshouse.gov.uk/search/companies?items_per_page=100&q={}"
 
-query = "FM Global UK"
+query = "SL6 2PJ"
 
 query = query.replace(" ","+")
 query = query.replace("&","%26")
@@ -24,8 +24,8 @@ saved = False
 while not saved:
     try:
         outputcsv.to_csv("search.csv")
-    except:
-        print("Cannot save - close excel")
+    except PermissionError:
+        print("Cannot save - is excel closed?")
         time.sleep(0.5)
     else:
         saved = True
