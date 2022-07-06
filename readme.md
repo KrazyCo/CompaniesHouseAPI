@@ -27,3 +27,5 @@ Like all the other programs, I save to excel as its easier to read, of course yo
 
 In the excel for google API, I also added a column for resultScore, which from what I can understand is how confident the API is that it is related to the query. <br>
 and yes i didnt want to make another repositery so google is going here as well
+<hr>
+uk-sic.json and us-sic.json is from https://github.com/rageycomma/sic-json but in just a dictionary, not a list of dictionaries as it made more sense to me
