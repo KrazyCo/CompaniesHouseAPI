@@ -19,7 +19,7 @@ You can input unlimited company codes, but there a 0.5 second delay between each
 
 The output is saved to companysearch.csv, with sic_codes in a list for each company.<br>
 <hr>
-For siccode.py, I scrape the search page for siccode.com, and parse down to the company name, NACIS code, description of that code, and location. I made it into a class so you can just import it into another file. The search function will return a list of dictionaries, up to 100 as this is how many the page displays. . If you run just the file itself the query input is on line 49, inside the search function. It will output to siccodes.csv
+For siccode.py, I scrape the search page for siccode.com, and parse down to the company name, NACIS code, description of that code, and location. I made it into a class so you can just import it into another file. The search function will return a list of dictionaries, up to 100 as this is how many the page displays. If you run just the file itself the query input is on line 49, inside the search function. It will output to siccodes.csv
 <hr>
 For googleapi.py, the api key goes into “.google_api” alone. You get the key from https://console.cloud.google.com/apis/credentials<br>
 
